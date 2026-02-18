@@ -407,11 +407,16 @@ app.delete('/api/creators/:id', (req, res) => {
     }
 });
 
-// Start server
-app.listen(PORT, () => {
-    console.log(`\n╔══════════════════════════════════════╗`);
-    console.log(`║  Pandora Box                         ║`);
-    console.log(`║  http://localhost:${PORT}               ║`);
-    console.log(`║  http://localhost:${PORT}/adminp        ║`);
-    console.log(`╚══════════════════════════════════════╝\n`);
-});
+// Start server (only in local development)
+if (process.env.NODE_ENV !== 'production') {
+    app.listen(PORT, () => {
+        console.log(`\n╔══════════════════════════════════════╗`);
+        console.log(`║  Pandora Box                         ║`);
+        console.log(`║  http://localhost:${PORT}               ║`);
+        console.log(`║  http://localhost:${PORT}/adminp        ║`);
+        console.log(`╚══════════════════════════════════════╝\n`);
+    });
+}
+
+// Export for Vercel
+module.exports = app;

@@ -1,0 +1,46 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "server.js",
+      "use": "@vercel/node"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/assets/(.*)",
+      "dest": "/dist/assets/$1"
+    },
+    {
+      "src": "/logo.png",
+      "dest": "/logo.png"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/adminp",
+      "dest": "/server.js"
+    },
+    {
+      "src": "/app.js",
+      "dest": "/public/app.js"
+    },
+    {
+      "src": "/styles.css",
+      "dest": "/public/styles.css"
+    },
+    {
+      "src": "/",
+      "dest": "/server.js"
+    }
+  ]
+}
