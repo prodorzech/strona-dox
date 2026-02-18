@@ -1,0 +1,25 @@
+{
+  "id": "dox_1771375217778_097ec9c9fa87",
+  "nick": "majucha",
+  "shortDesc": "A dangerous friend",
+  "fullDesc": "Name: Maja\nSurname: Winiarek\nCity: Kobyłka\nFamily City: Kobyłka\nAge: 15\nBirthday: 16.09.2010\n\nDiscord nick: itxmajalol\nDiscord ID: 1042113660006445096\n\n=============================\n\nMom Name: Karolina\nMom Surname: Winiarek\nMom City: Kobyłka\nMom Family City: Kobyłka\nMom Age: xx\nMom Birthday: 06.11.xxxx\n\n=============================\n\nDad Name: Paweł\nDad Surname: Winiarek\nDad City: Kobyłka\nDad Family City: Kobyłka\nDad Age: xx\nDad Birthday: xx.xx.xx\n\nFacebook: \n\n=============================\n\nSister Name: Oliwia\nSister Surname: Winiarek\nSister City: Kobyłka\nSister Family City: Kobyłka\nSister Age: 18\nSister Birthday: 26.05.2007\n\n=============================\n\nSister 2 Name: Tosia\nSister 2 Surname: Winiarek\nSister 2 City: Kobyłka\nSister 2 Family City: Kobyłka\nSister 2 Age: 5\nSister 2 Birthday: 04.02.2020",
+  "tables": [
+    {
+      "title": "Links",
+      "data": {
+        "Facebook": "https://www.facebook.com/profile.php?id=100068553731236",
+        "IG Main": "https://www.instagram.com/pr3tty.maja?igsh=MWVic3pvbzA5MGV2eA==",
+        "IG Private": "https://www.instagram.com/maja.privatess?igsh=Z2Y0Mm5hYnFuZHEy",
+        "Spotify": "https://open.spotify.com/user/48px4wacwekpsnn3rr1vfghfm?si=e49facdadc314c98",
+        "Twitch": "https://www.twitch.tv/itxmajalol",
+        "Steam": "https://steamcommunity.com/profiles/76561199658255617",
+        "Mom Facebook": "https://www.facebook.com/karolina.winiarek.5",
+        "Mom Job Owner": "https://www.facebook.com/profile.php?id=100076259139324",
+        "Sister Facebook": "https://www.facebook.com/oliwia.winiarek"
+      }
+    }
+  ],
+  "images": [],
+  "createdAt": "2026-02-18T00:40:17.778Z",
+  "ipHash": "261f4c01c2bdca4073e8e46e965ebe2ba631f70b4ce0dddfc285f59f499c6e34"
+}

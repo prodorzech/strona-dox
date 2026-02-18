@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta http-equiv="cache-control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title>Pandora Box</title>
+    <link rel="icon" type="image/png" href="logo.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="app">
+        <!-- Strona główna -->
+        <div id="homepage" class="page active">
+            <header class="header">
+                <div class="logo-container">
+                    <img src="logo.png" alt="Pandora Box Logo" class="logo-image">
+                    <h1 class="logo">Pandora Box</h1>
+                </div>
+                <p class="tagline">A bunch of suckers</p>
+            </header>
+
+            <main class="container">
+                <section class="doxes-section">
+                    <div class="section-nav">
+                        <h2 class="section-title" id="doxesTabBtn">Doxxing Database</h2>
+                        <h2 class="section-title inactive-tab" id="creatorsTabBtn">Creators</h2>
+                    </div>
+                    
+                    <div id="doxesTab" class="tab-content active">
+                        <div class="doxes-grid" id="doxesGrid">
+                            <!-- Dynamically populated -->
+                        </div>
+                    </div>
+
+                    <div id="creatorsTab" class="tab-content">
+                        <div class="creators-grid" id="creatorsGrid">
+                            <!-- Dynamically populated -->
+                        </div>
+                    </div>
+                </section>
+            </main>
+
+            <footer class="footer">
+                <p> 2026 &copy; Pandora Box. All rights reserved.</p>
+            </footer>
+        </div>
+
+        <!-- Modal z pełnym opisem -->
+        <div id="detailModal" class="modal">
+            <div class="modal-content">
+                <button class="modal-close">&times;</button>
+                <div class="modal-header">
+                    <h2 id="modalNick" class="modal-nick"></h2>
+                </div>
+                <div class="modal-layout">
+                    <div class="modal-left">
+                        <div class="modal-description" id="modalFullDesc"></div>
+                        <div class="modal-tables" id="modalTables"></div>
+                    </div>
+                    <div class="modal-right">
+                        <div class="modal-gallery" id="modalGallery"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Image Lightbox -->
+        <div id="imageLightbox" class="lightbox">
+            <img id="lightboxImage" src="" alt="">
+            <button class="lightbox-close">&times;</button>
+            <button class="lightbox-prev">&lt;</button>
+            <button class="lightbox-next">&gt;</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

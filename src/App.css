@@ -1,0 +1,1008 @@
+:root {
+    --black: #000000;
+    --dark-gray: #1a0000;
+    --gray: #cc0000;
+    --light-gray: #ff3333;
+    --white: #ffffff;
+    --accent-white: #f0f0f0;
+    --red: #ff0000;
+    --dark-red: #990000;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Arial', sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+    overflow-x: hidden;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+
+/* ===== ANIMATIONS ===== */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
+}
+
+.page {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.page.active {
+    display: block;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.page:not(.active) {
+    display: none;
+}
+
+/* ===== LOGIN PAGE ===== */
+.login-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--black) 0%, var(--dark-gray) 100%);
+}
+
+.login-box {
+    background: var(--dark-gray);
+    border: 2px solid var(--gray);
+    border-radius: 10px;
+    padding: 50px;
+    width: 100%;
+    max-width: 400px;
+    animation: slideUp 0.6s ease-out;
+}
+
+.login-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+    color: var(--white);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    animation: slideUp 0.6s ease-out backwards;
+}
+
+.form-group:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.form-group:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--white);
+    letter-spacing: 1px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    background: var(--black);
+    border: 1px solid var(--gray);
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--white);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.error-message {
+    color: #ff6b6b;
+    margin-top: 10px;
+    text-align: center;
+    font-size: 0.9rem;
+    animation: slideUp 0.3s ease-out;
+}
+
+/* ===== BUTTONS ===== */
+.btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 1px;
+}
+
+.btn-primary {
+    background: var(--white);
+    color: var(--black);
+    width: 100%;
+    margin-top: 10px;
+}
+
+.btn-primary:hover {
+    background: var(--accent-white);
+    transform: scale(1.02);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.3);
+}
+
+.btn-secondary {
+    background: var(--gray);
+    color: var(--white);
+}
+
+.btn-secondary:hover {
+    background: var(--light-gray);
+    transform: scale(1.02);
+}
+
+.btn-danger {
+    background: #ff6b6b;
+    color: var(--white);
+}
+
+.btn-danger:hover {
+    background: #ff5252;
+}
+
+/* ===== ADMIN HEADER ===== */
+.admin-header {
+    background: linear-gradient(135deg, var(--dark-gray) 0%, var(--black) 100%);
+    border-bottom: 2px solid var(--gray);
+    padding: 25px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    animation: slideInLeft 0.6s ease-out;
+}
+
+.admin-header h1 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+#logoutBtn {
+    animation: slideUp 0.6s ease-out 0.2s backwards;
+}
+
+/* ===== ADMIN CONTAINER ===== */
+.admin-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 20px;
+    min-height: calc(100vh - 100px);
+}
+
+.admin-section {
+    animation: fadeIn 0.6s ease-out 0.3s backwards;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid var(--gray);
+}
+
+.section-header h2 {
+    font-size: 2rem;
+    letter-spacing: 2px;
+}
+
+.admin-tabs {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--gray);
+    padding-bottom: 0;
+}
+
+.admin-tab-btn {
+    background: none;
+    border: none;
+    color: var(--light-gray);
+    padding: 15px 25px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-bottom: 3px solid transparent;
+    letter-spacing: 1px;
+}
+
+.admin-tab-btn:hover {
+    color: var(--white);
+}
+
+.admin-tab-btn.active {
+    color: var(--white);
+    border-bottom-color: var(--white);
+}
+
+.admin-tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.admin-tab-content.active {
+    display: block;
+}
+
+.creators-list {
+    display: grid;
+    gap: 20px;
+}
+
+.creator-item {
+    background: linear-gradient(135deg, var(--dark-gray) 0%, var(--gray) 100%);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    animation: scaleIn 0.4s ease-out backwards;
+}
+
+.creator-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.creator-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.creator-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+    border-color: var(--white);
+}
+
+.creator-item-info {
+    flex: 1;
+}
+
+.creator-item-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.creator-item-info p {
+    color: var(--accent-white);
+    font-size: 0.9rem;
+    margin-bottom: 3px;
+}
+
+.creator-item-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.creator-item-actions .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.avatar-preview-single {
+    margin-top: 15px;
+}
+
+.avatar-preview-single img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 2px solid var(--white);
+    object-fit: cover;
+    animation: scaleIn 0.3s ease-out;
+}
+
+#addDoxBtn {
+    animation: slideUp 0.6s ease-out 0.4s backwards;
+}
+
+/* ===== DOXES LIST ===== */
+.doxes-list {
+    display: grid;
+    gap: 20px;
+}
+
+.dox-item {
+    background: linear-gradient(135deg, var(--dark-gray) 0%, var(--gray) 100%);
+    border: 1px solid var(--light-gray);
+    border-radius: 8px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.3s ease;
+    animation: scaleIn 0.4s ease-out backwards;
+}
+
+.dox-item:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.dox-item:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.dox-item:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.dox-item:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.dox-item:hover {
+    transform: translateX(10px);
+    box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
+    border-color: var(--white);
+}
+
+.dox-item-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+}
+
+.dox-item-desc {
+    color: var(--accent-white);
+    font-size: 0.95rem;
+}
+
+.dox-item-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.dox-item-actions .btn {
+    padding: 8px 16px;
+    font-size: 0.9rem;
+}
+
+/* ===== MODAL ===== */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    animation: fadeIn 0.3s ease-out;
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background: var(--dark-gray);
+    border: 2px solid var(--gray);
+    border-radius: 10px;
+    width: 90%;
+    max-width: 700px;
+    max-height: 85vh;
+    overflow-y: auto;
+    position: relative;
+    animation: scaleIn 0.4s ease-out;
+    padding: 40px;
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    z-index: 1001;
+}
+
+.modal-close:hover {
+    transform: rotate(90deg);
+    color: var(--light-gray);
+}
+
+.modal-body h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+/* ===== FORM STYLES ===== */
+#doxForm .form-group {
+    margin-bottom: 20px;
+}
+
+#doxForm label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: var(--white);
+}
+
+#doxForm input[type="text"],
+#doxForm textarea,
+#creatorForm input[type="text"],
+#creatorForm textarea {
+    width: 100%;
+    padding: 12px;
+    background: var(--black);
+    border: 1px solid var(--gray);
+    border-radius: 6px;
+    color: var(--white);
+    font-size: 1rem;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+#doxForm input[type="text"]:focus,
+#doxForm textarea:focus,
+#creatorForm input[type="text"]:focus,
+#creatorForm textarea:focus {
+    outline: none;
+    border-color: var(--white);
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+#doxForm textarea,
+#creatorForm textarea {
+    min-height: 120px;
+    resize: vertical;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+#tablesContainer {
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--gray);
+}
+
+#tablesContainer h3 {
+    margin-bottom: 15px;
+    color: var(--white);
+}
+
+.table-item {
+    background: var(--black);
+    border: 1px solid var(--gray);
+    border-radius: 6px;
+    padding: 15px;
+    margin-bottom: 15px;
+    animation: slideUp 0.3s ease-out;
+}
+
+.table-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.table-row input {
+    flex: 1;
+    padding: 8px;
+    background: var(--dark-gray);
+    border: 1px solid var(--gray);
+    border-radius: 4px;
+    color: var(--white);
+    font-size: 0.9rem;
+}
+
+.table-row button {
+    padding: 8px 15px;
+}
+
+.add-row-btn {
+    background: var(--gray);
+    color: var(--white);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+
+.add-row-btn:hover {
+    background: var(--light-gray);
+}
+
+#imageInput {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.image-upload-area {
+    border: 3px dashed var(--light-gray);
+    border-radius: 10px;
+    padding: 40px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, rgba(58, 58, 58, 0.3) 0%, rgba(90, 90, 90, 0.1) 100%);
+    margin-bottom: 20px;
+}
+
+.image-upload-area:hover {
+    border-color: var(--white);
+    background: linear-gradient(135deg, rgba(58, 58, 58, 0.5) 0%, rgba(90, 90, 90, 0.3) 100%);
+    transform: scale(1.02);
+}
+
+.image-upload-area.drag-over {
+    border-color: var(--white);
+    background: linear-gradient(135deg, var(--gray) 0%, var(--light-gray) 100%);
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    transform: scale(1.03);
+}
+
+.upload-icon {
+    width: 60px;
+    height: 60px;
+    color: var(--white);
+    margin-bottom: 15px;
+    animation: slideUp 0.5s ease-out backwards;
+}
+
+.image-upload-area h3 {
+    font-size: 1.3rem;
+    color: var(--white);
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+    animation: slideUp 0.5s ease-out 0.1s backwards;
+}
+
+.image-upload-area p {
+    font-size: 0.95rem;
+    color: var(--accent-white);
+    animation: slideUp 0.5s ease-out 0.2s backwards;
+}
+
+.image-preview {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.image-preview-item {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    aspect-ratio: 1;
+    animation: scaleIn 0.3s ease-out;
+}
+
+.image-preview-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.image-preview-item button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    background: #ff6b6b;
+    border: none;
+    color: var(--white);
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.image-preview-item button:hover {
+    background: #ff5252;
+    transform: scale(1.1);
+}
+
+.form-actions {
+    display: flex;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+.form-actions button {
+    flex: 1;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--dark-gray);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gray);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--light-gray);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    .login-box {
+        padding: 30px;
+    }
+
+    .admin-header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    .admin-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .section-header {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    #addDoxBtn,
+    #addCreatorBtn {
+        width: 100%;
+    }
+
+    .dox-item,
+    .creator-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .dox-item-actions,
+    .creator-item-actions {
+        width: 100%;
+    }
+
+    .dox-item-actions .btn,
+    .creator-item-actions .btn {
+        flex: 1;
+    }
+
+    .modal-content {
+        padding: 25px;
+        width: 95%;
+    }
+
+    .form-actions {
+        flex-direction: column;
+    }
+
+    .admin-tabs {
+        flex-wrap: wrap;
+    }
+
+    .admin-tab-btn {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+@media (max-width: 480px) {
+    html, body {
+        font-size: 14px;
+    }
+
+    .login-container {
+        padding: 15px;
+    }
+
+    .login-box {
+        padding: 20px;
+        max-width: 100%;
+    }
+
+    .login-title {
+        font-size: 1.5rem;
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 15px;
+    }
+
+    .form-group input {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .btn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .admin-header {
+        padding: 15px 15px;
+    }
+
+    .admin-header h1 {
+        font-size: 1.3rem;
+    }
+
+    #logoutBtn {
+        width: 100%;
+        padding: 10px;
+    }
+
+    .admin-container {
+        padding: 15px 10px;
+        max-width: 100%;
+    }
+
+    .section-header {
+        margin-bottom: 15px;
+    }
+
+    .section-header h2 {
+        font-size: 1.3rem;
+    }
+
+    #addDoxBtn,
+    #addCreatorBtn {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+
+    .dox-item,
+    .creator-item {
+        padding: 12px;
+        border-radius: 6px;
+    }
+
+    .dox-item-info h3,
+    .creator-item-info h3 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+
+    .dox-item-desc,
+    .creator-item-info p {
+        font-size: 0.85rem;
+    }
+
+    .dox-item-actions,
+    .creator-item-actions {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+    }
+
+    .dox-item-actions .btn,
+    .creator-item-actions .btn {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .modal-close {
+        font-size: 1.5rem;
+        top: 10px;
+        right: 10px;
+    }
+
+    .modal-body h2 {
+        font-size: 1.3rem;
+        margin-bottom: 15px;
+    }
+
+    .form-group label {
+        font-size: 0.9rem;
+    }
+
+    .form-group input[type="text"],
+    .form-group textarea {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    #doxForm textarea,
+    #creatorForm textarea {
+        min-height: 100px;
+    }
+
+    .image-upload-area,
+    #avatarUploadArea {
+        padding: 20px;
+        border-radius: 8px;
+    }
+
+    .upload-icon {
+        width: 50px;
+        height: 50px;
+    }
+
+    .image-upload-area h3,
+    #avatarUploadArea h3 {
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+
+    .image-upload-area p,
+    #avatarUploadArea p {
+        font-size: 0.8rem;
+    }
+
+    .image-preview {
+        grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+        gap: 8px;
+    }
+
+    .image-preview-item {
+        height: 80px;
+    }
+
+    .image-preview-item button {
+        width: 22px;
+        height: 22px;
+        font-size: 0.9rem;
+    }
+
+    .avatar-preview-single img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .table-item {
+        padding: 12px;
+        margin-bottom: 12px;
+    }
+
+    .table-title {
+        padding: 8px !important;
+        font-size: 0.9rem;
+        margin-bottom: 8px;
+    }
+
+    .table-rows {
+        gap: 8px;
+    }
+
+    .table-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+
+    .table-row input {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    .add-row-btn {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+    }
+
+    #addTableBtn {
+        padding: 8px 12px;
+        font-size: 0.85rem;
+        width: 100%;
+    }
+
+    .form-actions {
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .form-actions button {
+        padding: 10px;
+        font-size: 0.9rem;
+    }
+
+    .admin-tabs {
+        gap: 5px;
+        margin-bottom: 20px;
+    }
+
+    .admin-tab-btn {
+        padding: 10px 12px;
+        font-size: 0.85rem;
+        border-bottom-width: 2px;
+    }
+
+    .creators-list {
+        gap: 15px;
+    }
+}

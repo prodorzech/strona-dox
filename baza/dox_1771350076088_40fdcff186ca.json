@@ -1,0 +1,19 @@
+{
+  "id": "dox_1771350076088_40fdcff186ca",
+  "nick": "MintGuy",
+  "shortDesc": "Funny scammer",
+  "fullDesc": "Name: Konrad\nSurname: Aftyka\nCity: Choszczów\nFamily city: Choszczów\nAge: 16\nBirthday: 30.06.2010\n﻿\nFacebook: https://www.facebook.com/konrad.aftyka.10\nInstagram: https://www.instagram.com/konrad.a.13?igsh=ZHBoeHo0Z2dzbXZy\n﻿\nPhone number: 665 466 710\nPhone Operator: Play\nRegion: Pologne\nCountry: PL\nStatus: Valid\n﻿\nIBAN: PL51970710160203240720000001\nIP: 213.134.180.216\nISP: P4 Sp. z o.o. (Play)\nOrg: ASTER Sp. z o.o.\nAs: AS9141 P4 Sp. z o.o.",
+  "tables": [
+    {
+      "title": "Links",
+      "data": {
+        "Facebook": "https://www.facebook.com/konrad.aftyka.10",
+        "Instagram": "https://www.instagram.com/konrad.a.13?igsh=ZHBoeHo0Z2dzbXZy"
+      }
+    }
+  ],
+  "images": [],
+  "createdAt": "2026-02-17T17:41:16.088Z",
+  "ipHash": "261f4c01c2bdca4073e8e46e965ebe2ba631f70b4ce0dddfc285f59f499c6e34",
+  "updatedAt": "2026-02-17T17:48:32.660Z"
+}
